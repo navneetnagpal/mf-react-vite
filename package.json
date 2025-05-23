@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter web-app dev",
+    "build": "pnpm  --parallel --filter \"./**\" build",
+    "preview": "pnpm  --parallel --filter \"./**\" preview",
+    "stop": "kill-port --port 5000,5001",
     "test:all": "pnpm -r test",
     "build:all": "pnpm -r build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "glob": "^11.0.2"
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "glob": "^11.0.2",
+    "kill-port": "^2.0.1"
   }
 }
